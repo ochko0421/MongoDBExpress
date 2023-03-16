@@ -1,0 +1,20 @@
+###
+get http://localhost:8000/user
+
+###
+post http://localhost:8000/user/create
+Content-Type: application/json
+
+{
+    "name":"Test2",
+    "isAdmin":true,
+    "username":"Test2",
+    "password":"Ochko0421"
+}
+###
+put http://localhost:8000/user/update/64128c689d2c005077eadfb5
+Content-Type: application/json
+
+{
+    "name":"Test15"
+}
