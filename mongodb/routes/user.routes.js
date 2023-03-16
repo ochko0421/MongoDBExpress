@@ -5,5 +5,6 @@ const route = Router();
 
 route.get("/", user.getAll);
 route.post("/create", user.create);
-route.put("/update/:id",user.update)
+route.put("/update/:id", user.update);
+route.delete("/delete/:id", user.delete)
 module.exports = route;

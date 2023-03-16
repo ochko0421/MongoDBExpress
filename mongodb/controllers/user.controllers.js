@@ -31,34 +31,14 @@ exports.update = async (req, res) => {
 exports.getAll = async (req, res) => {
     const a = await User.find();
     console.log(a);
-    res.json({message:"Test",result:a})
+    res.json({message:"Success",result:a})
 }
 
-// exports.delete = (req, res) => {
-
-//   const { id } = req.params;
-//   fs.readFile(file, "utf-8", (readErr, data) => {
-//     if (readErr) {
-//       res.json({ status: "false", message: readErr })
-//     }
-
-//     const obj = data ? JSON.parse(data) : []
-//     const newArr = obj.filter((e) => {
-
-//       return e.id != id
-//     })
-
-//     fs.writeFile(file, JSON.stringify(newArr), (err) => {
-//       if (err) {
-//         res.json({ status: "false", message: err })
-//       }
-
-//       res.json({ status: true, result: newArr })
-//     })
-
-//     res.json({ status: true, result: newArr })
-//   })
-// }
+exports.delete =async (req, res) => {
+    const {id}=req.params;
+    let a = await User.deleteOne({_id:id})
+    res.json({message:"Success",result:a})
+}
 
 // exports.login = (req, res) => {
 //   const { username, password } = req.body
