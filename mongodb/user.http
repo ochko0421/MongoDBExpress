@@ -2,6 +2,10 @@
 get http://localhost:8000/user
 
 ###
+
+get http://localhost:8000/user/get/6412884a91bfaba1c144a612
+
+###
 post http://localhost:8000/user/create
 Content-Type: application/json
 

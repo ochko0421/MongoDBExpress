@@ -4,9 +4,9 @@ const User = require("../models/user.model")
 
 const uniqueRandomID = uuid.v4()
 
-const bcrypt = require('bcrypt');
-const saltRounds = 10;
-const myPlaintextPassword = 's0/\/\P4$$w0rD';
+// const bcrypt = require('bcrypt');
+// const saltRounds = 10;
+// const myPlaintextPassword = 's0/\/\P4$$w0rD';
 
 exports.create = async (req, res) => {
 //    const obj = req.body;
@@ -28,6 +28,12 @@ exports.update = async (req, res) => {
   
 };
 
+exports.getOne= async(req,res)=>{
+    const {id}= req.params;
+    const a = await User.find({_id:id})
+    res.json({message:"Success",data:a})
+}
+
 exports.getAll = async (req, res) => {
     const a = await User.find();
     console.log(a);
@@ -39,6 +45,7 @@ exports.delete =async (req, res) => {
     let a = await User.deleteOne({_id:id})
     res.json({message:"Success",result:a})
 }
+
 
 // exports.login = (req, res) => {
 //   const { username, password } = req.body
