@@ -5,6 +5,8 @@ const app = express();
 const mongoose = require("mongoose");
 
 const userRoute = require("./routes/user.routes");
+const categoryRoute= require("./routes/category.routes")
+const productRoute = require("./routes/product.routes")
 app.use(cors());
 app.use(express.json())
 
@@ -16,7 +18,9 @@ mongoose
   .then(() => console.log("Database successfully connected"))
   .catch((err) => console.log(err));
 
-app.use("/user", userRoute);
+app.use("/api", userRoute);
+app.use("/api",categoryRoute);
+app.use("/api",productRoute)
 
 app.get("/api", (req, res) => {
   res.json("Welcome to API");

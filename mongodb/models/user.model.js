@@ -1,11 +1,12 @@
-const { default: mongoose } = require("mongoose");
+const { default: mongoose, Schema } = require("mongoose");
 
 const userSchema = new mongoose.Schema(
   {
     name:String,
     isAdmin: Boolean,
     username:String,
-    password:String
+    password:String,
+    categoryId:[{type:Schema.Types.ObjectId,ref:"Category"}]
 },
     {collection:"Users"}
 );
