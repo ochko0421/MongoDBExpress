@@ -4,9 +4,8 @@ const userSchema = new mongoose.Schema(
   {
     name:String,
     isAdmin: Boolean,
-    username:String,
-    password:String,
-    categoryId:[{type:Schema.Types.ObjectId,ref:"Category"}]
+    email:{type:String,unique:true},
+    password:String
 },
     {collection:"Users"}
 );

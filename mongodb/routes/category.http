@@ -1,9 +1,9 @@
 ###
-GET http://localhost:8000/api/category
+GET http://localhost:9000/api/category
 
 
 ###
-GET http://localhost:8000/api/category/641920f971024203ed458f3a
+GET http://localhost:9000/api/category/64192e0cb03b244e02f4b733
 
 
 ###

@@ -1,20 +1,20 @@
 const express = require("express");
 const cors = require("cors");
-const port = 8000;
+const port = 9000;
 const app = express();
 const mongoose = require("mongoose");
 
 const userRoute = require("./routes/user.routes");
 const categoryRoute= require("./routes/category.routes")
 const productRoute = require("./routes/product.routes")
+
+const dotenv = require("dotenv")
 app.use(cors());
 app.use(express.json())
+dotenv.config()
 
 mongoose
-  .connect(
-    "mongodb+srv://ochko:pwtKM8HtWBo8JeR6@cluster0.y9udncp.mongodb.net/Eshop"
-  )
-
+  .connect(process.env.MONGO_DB_URI)
   .then(() => console.log("Database successfully connected"))
   .catch((err) => console.log(err));
 

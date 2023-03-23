@@ -1,22 +1,22 @@
 ###
-get http://localhost:8000/user
+get http://localhost:9000/api/user
 
 ###
 
-get http://localhost:8000/user/get/6412884a91bfaba1c144a612
+get http://localhost:9000/api/user/get/6412884a91bfaba1c144a612
 
 ###
-post http://localhost:8000/user/create
+post http://localhost:9000/api/user/signup
 Content-Type: application/json
 
 {
-    "name":"Test2",
-    "isAdmin":true,
-    "username":"Test2",
-    "password":"Ochko0421"
+    "name":"ochko",
+    "isAdmin":false,
+    "email":"ochko0423@gmail.com",
+    "password":"Ochko0424"
 }
 ###
-put http://localhost:8000/user/update/64128c689d2c005077eadfb5
+put http://localhost:9000/api/user/update/64128c689d2c005077eadfb5
 Content-Type: application/json
 
 {
@@ -24,4 +24,13 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:8000/user/delete/64128ebbd29e0b04b6115637
+DELETE http://localhost:9000/api/user/delete/641bb2a50be60d985971c336
+
+###
+post http://localhost:9000/api/user/login
+Content-Type: application/json
+
+{
+"email":"ochko0422@gmail.com",
+    "password":"Ochko0421"
+}
