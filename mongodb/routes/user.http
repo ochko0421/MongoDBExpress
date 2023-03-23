@@ -6,13 +6,13 @@ get http://localhost:9000/api/user
 get http://localhost:9000/api/user/get/6412884a91bfaba1c144a612
 
 ###
-post http://localhost:9000/api/user/signup
+post https://mongodbexpress-kypi.onrender.com/api/user/signup
 Content-Type: application/json
 
 {
     "name":"ochko",
     "isAdmin":false,
-    "email":"ochko0423@gmail.com",
+    "email":"ochko04255@gmail.com",
     "password":"Ochko0424"
 }
 ###
@@ -27,7 +27,7 @@ Content-Type: application/json
 DELETE http://localhost:9000/api/user/delete/641bb2a50be60d985971c336
 
 ###
-post http://localhost:9000/api/user/login
+post https://mongodbexpress-kypi.onrender.com/
 Content-Type: application/json
 
 {
