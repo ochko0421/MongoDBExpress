@@ -24,7 +24,7 @@ exports.getOne= async(req,res)=>{
 }
 
 exports.getAll = async (req, res) => {
-    const a = await User.find();
+    const a = await User.find({});
     console.log(a);
     res.json({message:"Success",result:a})
 }
