@@ -97,7 +97,7 @@ exports.login = async (req, res) => {
         expiresIn:"2h",
       })
   
-      res.status(200).send({ status: true, data: user, message: "Success",token });
+      res.status(200).send({ status: true, result: user, message: "Success",token });
       return;
     } else {
       res.status(400).send({

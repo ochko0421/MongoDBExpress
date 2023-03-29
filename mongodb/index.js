@@ -7,6 +7,7 @@ const mongoose = require("mongoose");
 const userRoute = require("./routes/user.routes");
 const categoryRoute= require("./routes/category.routes")
 const productRoute = require("./routes/product.routes")
+const orderRoute= require("./routes/order.route")
 
 const dotenv = require("dotenv")
 app.use(cors());
@@ -20,7 +21,8 @@ mongoose
 
 app.use("/api", userRoute);
 app.use("/api",categoryRoute);
-app.use("/api",productRoute)
+app.use("/api",productRoute);
+app.use("/api",orderRoute)
 
 app.get("/api", (req, res) => {
   res.json("Welcome to API");
